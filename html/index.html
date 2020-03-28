@@ -22,7 +22,7 @@
 
         const colorCode = "#" + Math.random().toString(16).substr(2, 6);
 
-        const socket = new WebSocket("wss://teens-town.me:5000/sakura/");
+        const socket = new WebSocket("wss://teens-town.me/sakura/");
 
         socket.addEventListener("open", ((ev) => {
           console.log("接続成功");
