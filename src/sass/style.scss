@@ -1,0 +1,131 @@
+/**
+ * stylesheet for "webdev_starterkit"
+ * Copyright 2019 WANNAGROW Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * 
+ * @since 2019.04.01
+ * @author Kohei Seta
+ */
+
+@import 'boot';
+
+// ////////////////////
+// M PLUS 1p by Google Fonts
+// ////////////////////
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:300,400,700');
+
+* {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+// ////////////////////
+// Fontawesome Pro
+// ////////////////////
+@import './../fontawesome/css/all.css';
+
+// ********************
+// 共通
+// ********************
+.inner {
+  display: block;
+  width: $breakpoint-lg;
+  margin: 0 auto;
+  padding: 5px;
+
+  @include mq() {
+    width: auto;
+  }
+}
+
+// ********************
+// レイアウト
+// ********************
+.wrapper {
+  min-height: 100vh;
+  @include flex();
+  @include flexDirection(col);
+  @include justifyContent(sb);
+}
+
+.header {
+  border-bottom: 1px solid rgba($text-base, 0.6);
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff4d91;
+  box-shadow: $deep-box-shadow;
+}
+
+.form {
+  height: 60vh;
+
+  &__label {
+    display: block;
+    font-size: 1.4rem;
+    color: $text-base;
+    text-align: center;
+  }
+
+  &__text {
+    display: block;
+    width: 90%;
+    margin: 1rem auto;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 4px solid rgba($text-base, 0.2);
+    padding: 2px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-base-1;
+    text-align: center;
+    transition: .2s;
+
+    &:focus {
+      outline: none;
+      border-color: #ff4d91;
+    }
+
+    &:disabled {
+      background-color: rgba($text-base, 0.2);
+      cursor: not-allowed;
+    }
+  }
+
+  &__circle {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 3rem auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: $light;
+    border: 3px solid rgba($text-base, 0.2);
+    border-radius: 400px;
+    line-height: 200px;
+    font-size: 2rem;
+    color: rgba($text-base, 0.6);
+    text-align: center;
+    transition: .3s;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: rgba(#ff4d91, 0.7);
+      box-shadow: 0px 0px 13px 4px #ff4d91;
+    }
+
+    &.active {
+      border-color: #ff4d91;
+      color: #ff4d91;
+      border-width: 8px;
+    }
+  }
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  box-shadow: $deep-box-shadow;
+  background-color: $text-base;
+  color: $light;
+}
